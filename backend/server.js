@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // Hostinger par deploy karte waqt Environment variables me FRONTEND_URL add karein
+  origin: process.env.FRONTEND_URL || 'https://punyakarm.com/', // Hostinger par deploy karte waqt Environment variables me FRONTEND_URL add karein
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
