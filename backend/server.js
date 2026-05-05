@@ -13,7 +13,11 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*', // Hostinger par deploy karte waqt Environment variables me FRONTEND_URL add karein
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 app.use(express.json({ limit: '50mb' }));
 
 // Routes
